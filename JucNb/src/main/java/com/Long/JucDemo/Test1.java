@@ -25,11 +25,11 @@ import java.util.stream.Collectors;
 public class Test1 {
     public static List<String> list = Arrays.asList("jd", "tanmao", "pdd", "tamll");
 
-    public static void main(String[] args) {
-
-        List<String> priceAsync = getPriceAsync(list);
-        priceAsync.forEach(str -> System.out.println(str));
-    }
+//    public static void main(String[] args) {
+//
+//        List<String> priceAsync = getPriceAsync(list);
+//        priceAsync.forEach(str -> System.out.println(str));
+//    }
 
 
     public static List<String> getPriceAsync(List<String> mallList) {
@@ -261,12 +261,36 @@ public class Test1 {
                 for (int j = 0; j < 1000; j++) {
                     numberCount.addcount();
                 }
-            },i+"").start();
+            }, i + "").start();
         }
 
         Thread.sleep(3000);
         System.out.println(numberCount.getNums());
     }
 
+
+    public static String test12() {
+        ReentrantLock lock = new ReentrantLock();
+        lock.lock();
+        try {
+            System.out.println("test");
+            try{
+                return "sdfasdfasdf";
+            }catch (Exception e){
+                throw new Exception("test exception");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            lock.unlock();
+            System.out.println(" lock.unlock();");
+        }
+        return null;
+    }
+
+    public static void main(String[] args) {
+        test12();
+
+    }
 
 }
