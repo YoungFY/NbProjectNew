@@ -12,20 +12,20 @@ import java.util.concurrent.CountDownLatch;
  */
 public class AtomicClassDemo {
 
-
+//test
     public static void main(String[] args) throws InterruptedException {
-        NumberCount1 numberCount1=new NumberCount1();
-        CountDownLatch countDownLatch=new CountDownLatch(20);
-        for (int i = 0; i < 5; i++) {
-            new Thread(() -> {
-                for (int j = 0; j < 1000; j++) {
-                    numberCount1.addcount();
-                }
-            });
-        }
-
-        Thread.sleep(1000);
-        System.out.println(NumberCount1.atomicInteger.get());
+//        NumberCount1 numberCount1=new NumberCount1();
+//        CountDownLatch countDownLatch=new CountDownLatch(20);
+//        for (int i = 0; i < 5; i++) {
+//            new Thread(() -> {
+//                for (int j = 0; j < 1000; j++) {
+//                    numberCount1.addcount();
+//                }
+//            });
+//        }
+//
+//        Thread.sleep(1000);
+//        System.out.println(NumberCount1.atomicInteger.get());
 
 
 
